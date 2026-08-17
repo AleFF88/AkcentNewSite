@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Мета-теги -->
+    <title>Лазерне гравірування Запоріжжя — Майстерня «Акцент» | ТЦ Україна</title>
+    <meta name="description" content="Якісне та точне лазерне гравірування у центрі Запоріжжя (ТЦ Україна). Гравіювання на металі, шкірі, дереві, клавіатурах та подарунках. Ціни від 200 грн.">
+    <meta name="keywords" content="гравірування запоріжжя, лазерне гравірування запоріжжя, гравіювання на металі, гравіювання клавіатури запоріжжя, подарунки з гравіюванням">
+    
+    <!-- Open Graph (для соцмереж та месенджерів) -->
+    <meta property="og:title" content="Лазерне гравірування у Запоріжжі — Майстерня «Акцент»">
+    <meta property="og:description" content="Швидке та якісне нанесення написів і малюнків на будь-які поверхні в центрі Запоріжжя.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://akcent.zp.ua/">
+
+    <!-- Шрифти Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Стилі -->
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #181b22;
+            --accent-color: #f39c12;
+            --accent-hover: #d35400;
+            --text-main: #f0f2f5;
+            --text-muted: #9aa0a6;
+            --border-color: #2a2e39;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header / Hero --- */
+        .header {
+            background: linear-gradient(135deg, rgba(15, 17, 21, 0.95) 0%, rgba(24, 27, 34, 0.95) 100%), 
+                        radial-gradient(circle at top right, rgba(243, 156, 18, 0.15), transparent 50%);
+            padding: 60px 0 80px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .brand-badge {
+            display: inline-block;
+            background: rgba(243, 156, 18, 0.1);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 35px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* --- Sections General --- */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- Services --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 35px 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        /* --- Pricing & Vector Requirements --- */
+        .price-box {
+            background: linear-gradient(180deg, var(--card-bg) 0%, rgba(24, 27, 34, 0.6) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .price-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .price-badge {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-top: 10px;
+        }
+
+        .info-block {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .info-block h4 {
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        /* --- Carousel Gallery --- */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 250px;
+            height: 250px;
+            cursor: pointer;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            transition: border-color 0.3s, transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .carousel-slide:hover {
+            border-color: var(--accent-color);
+            transform: scale(1.03);
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .carousel-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--accent-color);
+            color: #000;
+            border-color: var(--accent-color);
+        }
+
+        /* Modal Lightbox */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- Footer & Contacts --- */
+        footer {
+            background-color: #08090c;
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contacts-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-tg { background-color: #24A1DE; color: #fff; }
+        .btn-viber { background-color: #7360F2; color: #fff; }
+        .btn-insta { background-color: #E1306C; color: #fff; }
+
+        .social-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 868px) {
+            .hero-title { font-size: 2.1rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .map-container { min-height: 300px; }
+            .price-box { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Перший екран / Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="brand-badge">Лазерне гравірування «Акцент» • м. Запоріжжя</div>
+            <h1 class="hero-title">Лазерне гравіювання у центрі Запоріжжя</h1>
+            <p class="hero-subtitle">Якісне та точне нанесення написів, малюнків і символів на будь-які поверхні.</p>
+            <div class="cta-buttons">
+                <a href="tel:+380676123993" class="btn btn-primary" target="_blank" rel="noopener">Зателефонувати</a>
+                <a href="https://t.me/+380676123993" class="btn btn-secondary" target="_blank" rel="noopener">Написати в Telegram</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Послуги -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Наші послуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔪</div>
+                    <h3>Гравірування на металі</h3>
+                    <p>Нанесення написів та малюнків на ножі, сувенірні жетони, запальнички, годинники, посуд та термоси.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Гравірування на шкірі та дереві</h3>
+                    <p>Персоналізація гаманців, ременів, чохлів, дерев'яних сувенірів та Yud-виробів.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎁</div>
+                    <h3>Персоналізація подарунків</h3>
+                    <p>Індивідуальні вітальні написи на готових виробах і пам'ятних сувенірах будь-якої складності.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Вартість та Вимоги -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Вартість послуг</h2>
+            <div class="price-box">
+                <div class="price-header">
+                    <p>Вартість послуг гравірування</p>
+                    <div class="price-badge">від 200 грн</div>
+                </div>
+                
+                <div class="info-block">
+                    Точна вартість залежить від розміру нанесеного зображення та матеріалу виробу. Для уточнення ціни зателефонуйте нам або завітайте до майстерні.
+                </div>
+
+                <div class="info-block">
+                    <h4>Вимоги до макетів та підготовка:</h4>
+                    Гравірування та підбір малюнка проводиться безпосередньо в офісі. Якщо ви бажаєте нанести попередньо підготовлений логотип або зображення, вам потрібно буде надати файл у векторному форматі. Векторне зображення у файлі не повинно містити розімкнутих точок у замкнутих контурах, заливок, накладень контурів один на одного.<br><br>
+                    На той випадок, якщо у вас немає векторного формату, а картинку дуже хочеться вигравірувати – наші дизайнери зможуть переробити вашу картинку на векторний формат.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Галерея робіт -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Приклади робіт</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+					<div class="carousel-slide"><img src="img/smpl00.webp" alt="Гравірування на металі"></div>
+					<div class="carousel-slide"><img src="img/smpl01.webp" alt="Гравірування на металі"></div>
+					<div class="carousel-slide"><img src="img/smpl02.webp" alt="Гравірування на металі"></div>
+					<div class="carousel-slide"><img src="img/smpl03.webp" alt="Гравірування на металі"></div>
+					<div class="carousel-slide"><img src="img/smpl04.webp" alt="Гравірування на металі"></div>
+					<div class="carousel-slide"><img src="img/smpl05.webp" alt="Гравірування на металі"></div>
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <button class="carousel-btn" id="prevBtn" aria-label="Попереднє фото">&#10094;</button>
+                <button class="carousel-btn" id="nextBtn" aria-label="Наступне фото">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер / Контакти -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Ліва частина: Контакти -->
+                <div class="contacts-info">
+                    <h3>Контакти та візит</h3>
+                    
+                    <div class="contact-item">
+                        <strong>Адреса:</strong>
+                        м. Запоріжжя, пр. Соборний, 147, ТЦ "Україна", 1 поверх
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Телефон:</strong>
+                        <a href="tel:+380676123993" style="color: var(--accent-color); font-weight: bold; font-size: 1.2rem;">+38 (067) 612-3993</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Електронна пошта:</strong>
+                        <a href="mailto:akcentkach@gmail.com">akcentkach@gmail.com</a>
+                    </div>
+
+                    <div class="contact-links">
+                        <a href="https://t.me/+380676123993" class="social-btn btn-tg" target="_blank" rel="noopener">Telegram</a>
+                        <a href="viber://chat?number=%2B380676123993" class="social-btn btn-viber" target="_blank" rel="noopener">Viber</a>
+                        <a href="https://www.instagram.com/akcent.zp.ua" class="social-btn btn-insta" target="_blank" rel="noopener">Instagram</a>
+                    </div>
+                </div>
+
+                <!-- Права частина: Google Карта -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2677.1683939678197!2d35.12846107687834!3d47.84255737121226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc67215f9b4c0b%3A0x34ccf3e23075b111!2sPr.+Sobornyi%2C+147%2C+Zaporizhzhia%2C+Zaporizhia+Oblast%2C+69000!5e0!2m3!1m2!1suk!2sua!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div class="copyright">
+                © Лазерне гравірування «Акцент», м. Запоріжжя. Всі права захищені.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальне вікно для перегляду картинок -->
+    <div class="modal" id="imageModal">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Збільшене зображення">
+    </div>
+
+    <!-- JS Скрипти -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('carouselTrack');
+
+            // Логіка Каруселі
+            let currentIndex = 0;
+            const slideWidth = 270; // 250px width + 20px gap
+            let autoScrollInterval;
+
+            function moveCarousel(index) {
+                const maxIndex = track.children.length - Math.floor(track.parentElement.clientWidth / slideWidth);
+                if (index > maxIndex) currentIndex = 0;
+                else if (index < 0) currentIndex = maxIndex > 0 ? maxIndex : 0;
+                else currentIndex = index;
+
+                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            }
+
+            function startAutoScroll() {
+                autoScrollInterval = setInterval(() => {
+                    moveCarousel(currentIndex + 1);
+                }, 3000);
+            }
+
+            function stopAutoScroll() {
+                clearInterval(autoScrollInterval);
+            }
+
+            document.getElementById('nextBtn').addEventListener('click', () => {
+                stopAutoScroll();
+                moveCarousel(currentIndex + 1);
+                startAutoScroll();
+            });
+
+            document.getElementById('prevBtn').addEventListener('click', () => {
+                stopAutoScroll();
+                moveCarousel(currentIndex - 1);
+                startAutoScroll();
+            });
+
+            track.addEventListener('mouseenter', stopAutoScroll);
+            track.addEventListener('mouseleave', startAutoScroll);
+
+            startAutoScroll();
+
+            // Логіка Lightbox (збільшення фото)
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeModal = document.getElementById('modalClose');
+
+            track.addEventListener('click', (e) => {
+                if (e.target.tagName === 'IMG') {
+                    modal.style.display = 'flex';
+                    modalImg.src = e.target.src;
+                }
+            });
+
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+250x250
+1000x1000  
+Соотношение сторон: Лучше всего сделать все фото квадратными (1:1). Это позволит карусели выглядеть аккуратно и симметрично.
+
+Каждое изображение не должно превышать 100–150 Кб. В идеале — меньше 80 Кб.
+Рекомендуемый: WebP. Это современный формат, который обеспечивает отличное качество при гораздо меньшем размере файла (на 30-50% меньше, чем JPEG). Все современные браузеры его поддерживают.
+
+
+
+Предположим, вы подготовили 10 отличных квадратных фотографий в формате WebP и назвали их work1.webp, work2.webp, ..., work10.webp.
+
+В корневой папке сайта (там, где лежит файл index.html) создайте новую папку и назовите ее, например, img.Загрузите все ваши подготовленные фотографии (work1.webp и т.д.) в эту папку img.
+
+Сейчас в коде есть блок галереи, который выглядит так:
+
+<!-- Галерея робіт -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Приклади робіт</h2>
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- Заглушки 250x250 (Генеруються автоскриптом або додаються вручну) -->
+            </div>
+        </div>
+        <!-- ... навигация ... -->
+    </div>
+</section>999
+
+Вам нужно добавить ссылки на ваши реальные изображения внутрь блока с id="carouselTrack". Код должен стать таким:
+
+<!-- Галерея робіт -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Приклади робіт</h2>
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- Реальные изображения -->
+                <div class="carousel-slide"><./img src="img/work1.webp" alt="Гравировка на клавиатуре MacBook Запорожье"></div>
+                <div class="carousel-slide"><./img src="img/work2.webp" alt="Лазерная гравировка на армейском жетоне Акцент"></div>
+                <div class="carousel-slide"><./img src="img/work3.webp" alt="Гравировка на кожаном кошельке заказ"></div>
+                <div class="carousel-slide"><./img src="img/work4.webp" alt="Нанесение логотипа на термос Акцент"></div>
+                <div class="carousel-slide"><./img src="img/work5.webp" alt="Персонализация охотничьего ножа Запорожье"></div>
+                <!-- Добавьте столько блоков .carousel-slide, сколько у вас есть фото -->
+            </div>
+        </div>
+        <!-- ... навигация ... -->
+    </div>
+</section>
+
+Важно: Для каждого изображения заполняйте атрибут alt="" осмысленным описанием — это критически важно для SEO-оптимизации по картинкам.
+
+В коде есть JavaScript, который автоматически заполняет галерею серыми квадратами. После того как вы добавили реальные фото в HTML, этот скрипт нужно удалить или закомментировать.
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const track = document.getElementById('carouselTrack');
+        const totalImages = 20; // Кількість заглушок у каруселі
+
+        // Динамічне створення заглушок 250x250
+        for (let i = 1; i <= totalImages; i++) {
+            const slide = document.createElement('div');
+            slide.className = 'carousel-slide';
+            slide.innerHTML = `<img src="https://via.placeholder.com/250x250/181b22/f39c12?text=Робота+${i}" alt="Приклад гравірування ${i}">`;
+            track.appendChild(slide);
+        }
+
+        // ... остальная логика карусели ...
+    });
+</script>
+
+Вам нужно закомментировать (добавить // в начале строки) или удалить блок "Динамічне створення заглушок", чтобы он выглядел так:
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const track = document.getElementById('carouselTrack');
+        
+        // --- УДАЛИТЕ ИЛИ ЗАКОММЕНТИРУЙТЕ ЭТОТ БЛОК ---
+        // const totalImages = 20; 
+        // for (let i = 1; i <= totalImages; i++) {
+        //     const slide = document.createElement('div');
+        //     slide.className = 'carousel-slide';
+        //     slide.innerHTML = `<img src="https://via.placeholder.com/250x250/181b22/f39c12?text=Робота+${i}" alt="Приклад гравірування ${i}">`;
+        //     track.appendChild(slide);
+        // }
+        // ----------------------------------------------
+
+        // ... Логіка Каруселі и остальной код должны остаться ...
+    });
+</script>
