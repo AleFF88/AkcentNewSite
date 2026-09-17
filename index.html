@@ -381,24 +381,77 @@
             margin-top: 25px;
             flex-wrap: wrap;
         }
-
-        .social-btn {
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-weight: 600;
+		
+		.social-btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            justify-content: flex-start;
+            gap: 10px;
+            padding: 10px 16px;
+            width: 175px; /* Фиксированная ширина для одинакового размера всех кнопок */
+            box-sizing: border-box; /* Чтобы отступы и рамка не ломали общую ширину */
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            background-color: transparent;
+            border: 1px solid #d1d5db; /* Единый базовый контур (аккуратная серая рамка) */
+            transition: all 0.1s ease;
         }
-
-        .btn-tg { background-color: #24A1DE; color: #fff; }
-        .btn-viber { background-color: #7360F2; color: #fff; }
-        .btn-insta { background-color: #E1306C; color: #fff; }
-
+		
+		.social-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+		
         .social-btn:hover {
             opacity: 0.9;
-            transform: translateY(-2px);
+        }
+		
+        .btn-tg { 
+            border-color: #2AABEE; 
+            color: #2AABEE; 
+        }
+        .btn-tg:hover { 
+            background-color: rgba(42, 171, 238, 0.15); 
+            color: #2AABEE; 
+        }
+
+        .btn-viber { 
+            border-color: #7360F2; 
+            color: #7360F2; 
+        }
+        .btn-viber:hover { 
+            background-color: rgba(115, 96, 242, 0.15); 
+            color: #7360F2; 
+        }
+
+        .btn-wa { 
+            border-color: #25D366; 
+            color: #25D366; 
+        }
+        .btn-wa:hover { 
+            background-color: rgba(37, 211, 102, 0.15); 
+            color: #25D366; 
+        }
+
+        .btn-signal { 
+            border-color: #3A76F0; 
+            color: #3A76F0; 
+        }
+		
+        .btn-signal:hover { 
+            background-color: rgba(58, 118, 240, 0.15); 
+            color: #3A76F0; 
+        }
+		
+		.btn-insta { 
+            border-color: #C13584; 
+            color: #C13584; 
+        }
+        .btn-insta:hover { 
+            background-color: rgba(193, 53, 132, 0.15); 
+            color: #C13584; 
         }
 
         .map-container {
@@ -468,7 +521,7 @@
 	<div class="top-bar">
 		<div class="container top-bar-flex">
 			<a href="#" class="top-logo">
-				<img src="img/logo_light.svg" alt="Арт студія Акцент">
+				<img src="img/logo/logo_light.svg" alt="Арт студія Акцент">
 			</a>			
 			<a href="tel:+380676123993">+38 (067) 612-3993</a>
 		</div>
@@ -479,9 +532,31 @@
             <div class="brand-badge">Лазерне гравіювання «Акцент» • м. Запоріжжя</div>
             <h1 class="hero-title">Лазерне гравіювання у центрі Запоріжжя</h1>
             <p class="hero-subtitle">Якісне та точне нанесення написів, малюнків і символів на будь-які поверхні.</p>
+			
             <div class="cta-buttons">
-                <a href="tel:+380676123993" class="btn btn-primary" target="_blank" rel="noopener">Зателефонувати</a>
-                <a href="https://t.me/+380676123993" class="btn btn-secondary" target="_blank" rel="noopener">Написати в Telegram</a>
+				<!-- Telegram -->
+				<a href="https://t.me/+380676123993" class="social-btn btn-tg" target="_blank" rel="noopener" aria-label="Telegram">
+					<img src="img/logo/telegram-svgrepo-com.svg" alt="Telegram" class="social-icon">
+					<span>Telegram</span>
+				</a>
+						
+				<!-- Viber -->
+				<a href="viber://chat?number=%2B380676123993" class="social-btn btn-viber" target="_blank" rel="noopener" aria-label="Viber">
+					<img src="img/logo/viber-color-svgrepo-com.svg" alt="Viber" class="social-icon">
+					<span>Viber</span>
+				</a>
+				
+				<!-- WhatsApp -->
+				<a href="https://wa.me/380676123993" class="social-btn btn-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+					<img src="img/logo/whatsapp-color-svgrepo-com.svg" alt="WhatsApp" class="social-icon">
+					<span>WhatsApp</span>
+				</a>
+				
+				<!-- Signal -->
+				<a href="https://signal.me/#p/+380676123993" class="social-btn btn-signal" target="_blank" rel="noopener" aria-label="Signal">
+					<img src="img/logo/signal-svgrepo-com.svg" alt="Signal" class="social-icon">
+					<span>Signal</span>
+				</a>
             </div>
         </div>
     </header>
@@ -526,8 +601,8 @@
 
                 <div class="info-block">
                     <h4>Вимоги до макетів та підготовка:</h4>
-                    гравіювання та підбір малюнка проводиться безпосередньо в офісі. Якщо ви бажаєте нанести попередньо підготовлений логотип або зображення, вам потрібно буде надати файл у векторному форматі. Векторне зображення у файлі не повинно містити розімкнутих точок у замкнутих контурах, заливок, накладень контурів один на одного.<br><br>
-                    На той випадок, якщо у вас немає векторного формату, а картинку дуже хочеться вигравіювати – наші дизайнери зможуть переробити вашу картинку на векторний формат.
+                    Гравіювання та підбір малюнка проводяться безпосередньо в офісі. Якщо ви бажаєте нанести попередньо підготовлений логотип або зображення, вам потрібно буде надати файл у векторному форматі. Векторне зображення у файлі не повинно містити розімкнутих точок у замкнутих контурах, заливок, накладень контурів один на одного.<br><br>
+                    На той випадок, якщо у вас немає векторного формату, а картинку дуже хочеться вигравіювати — наші дизайнери зможуть переробити вашу картинку у векторний формат.
                 </div>
             </div>
         </div>
@@ -576,11 +651,37 @@
                         <strong>Електронна пошта:</strong>
                         <a href="mailto:akcentkach@gmail.com">akcentkach@gmail.com</a>
                     </div>
-
-                    <div class="contact-links">
-                        <a href="https://t.me/+380676123993" class="social-btn btn-tg" target="_blank" rel="noopener">Telegram</a>
-                        <a href="viber://chat?number=%2B380676123993" class="social-btn btn-viber" target="_blank" rel="noopener">Viber</a>
-                        <a href="https://www.instagram.com/akcent.zp.ua" class="social-btn btn-insta" target="_blank" rel="noopener">Instagram</a>
+					<div class="contact-links">
+						<!-- Telegram -->
+						<a href="https://t.me/+380676123993" class="social-btn btn-tg" target="_blank" rel="noopener" aria-label="Telegram">
+							<img src="img/logo/telegram-svgrepo-com.svg" alt="Telegram" class="social-icon">
+							<span>Telegram</span>
+						</a>
+								
+						<!-- Viber -->
+						<a href="viber://chat?number=%2B380676123993" class="social-btn btn-viber" target="_blank" rel="noopener" aria-label="Viber">
+							<img src="img/logo/viber-color-svgrepo-com.svg" alt="Viber" class="social-icon">
+							<span>Viber</span>
+						</a>
+						
+						<!-- WhatsApp -->
+						<a href="https://wa.me/380676123993" class="social-btn btn-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+							<img src="img/logo/whatsapp-color-svgrepo-com.svg" alt="WhatsApp" class="social-icon">
+							<span>WhatsApp</span>
+						</a>
+						
+						<!-- Signal -->
+						<a href="https://signal.me/#p/+380676123993" class="social-btn btn-signal" target="_blank" rel="noopener" aria-label="Signal">
+							<img src="img/logo/signal-svgrepo-com.svg" alt="Signal" class="social-icon">
+							<span>Signal</span>
+						</a>
+					
+						<!-- Instagram -->
+						<a href="https://www.instagram.com/akcent.zp.ua" class="social-btn btn-insta" target="_blank" rel="noopener" aria-label="Instagram">
+							<img src="img/logo/instagram-svgrepo-com.svg" alt="Instagram" class="social-icon">
+							<span>Instagram</span>
+						</a>
+						
                     </div>
                 </div>
 
