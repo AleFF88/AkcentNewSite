@@ -66,10 +66,10 @@
         }
 
         /* --- Header / Hero --- */
-        .header {
+		.header {
             background: linear-gradient(135deg, rgba(15, 17, 21, 0.95) 0%, rgba(24, 27, 34, 0.95) 100%), 
                         radial-gradient(circle at top right, rgba(243, 156, 18, 0.15), transparent 50%);
-            padding: 60px 0 80px;
+            padding: 120px 0 80px; /* Увеличили верхний отступ, чтобы контент шапки не прятался под панель */
             border-bottom: 1px solid var(--border-color);
             text-align: center;
         }
@@ -332,10 +332,10 @@
         }
 
         /* Modal Lightbox */
-        .modal {
+		.modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 9999; 
             top: 0;
             left: 0;
             width: 100%;
@@ -660,7 +660,11 @@
                 <div class="gallery-item" data-category="jewelry"><img src="img/smpl002.webp" alt="Ювелірні вироби"></div>
 				
                 <div class="gallery-item" data-category="watches"><img src="img/smpl02.webp" alt="Годинники"></div>
+                <div class="gallery-item" data-category="watches"><img src="img/smpl02.webp" alt="Годинники"></div>
+                <div class="gallery-item" data-category="watches"><img src="img/smpl02.webp" alt="Годинники"></div>
 				
+                <div class="gallery-item" data-category="knives"><img src="img/smpl04.webp" alt="Ніж з гравіюванням"></div>
+                <div class="gallery-item" data-category="knives"><img src="img/smpl04.webp" alt="Ніж з гравіюванням"></div>
                 <div class="gallery-item" data-category="knives"><img src="img/smpl04.webp" alt="Ніж з гравіюванням"></div>
 				
                 <div class="gallery-item" data-category="weapons"><img src="img/smpl03.webp" alt="Сувенірна зброя"></div>
