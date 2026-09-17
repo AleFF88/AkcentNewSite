@@ -38,13 +38,14 @@
             margin: 0;
             padding: 0;
         }
-
-        body {
+		
+		body {
             font-family: 'Open Sans', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
+            padding-top: 60px; 
         }
 
         h1, h2, h3, h4 {
@@ -242,69 +243,92 @@
             margin-bottom: 8px;
         }
 
-        /* --- Carousel Gallery --- */
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            padding: 10px 0;
-        }
-
-        .carousel-track {
+        /* --- Category Filters --- */
+        .category-filters {
             display: flex;
-            gap: 20px;
-            transition: transform 0.5s ease-in-out;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
         }
 
-        .carousel-slide {
-            min-width: 250px;
+        .filter-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--text-main);
+        }
+
+        .filter-btn.active {
+            background-color: var(--accent-color);
+            color: #000;
+            border-color: var(--accent-color);
+        }
+
+        /* --- Gallery Grid / Carousel --- */
+		.gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            max-height: 550px; /* Ограничение высоты примерно на 3 ряда с отступами */
+            overflow-y: auto;  /* Включение вертикального скролла при превышении */
+            padding-right: 10px; /* Чтобы скроллбар не наезжал на картинки */
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 12px;
+            background-color: rgba(24, 27, 34, 0.4);
+        }
+		
+		/* Кастомный скроллбар для галереи */
+        .gallery-grid::-webkit-scrollbar {
+            width: 8px;
+        }
+        .gallery-grid::-webkit-scrollbar-track {
+            background: var(--card-bg);
+            border-radius: 4px;
+        }
+        .gallery-grid::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+        .gallery-grid::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-color);
+        }
+		
+        .gallery-item {
             height: 250px;
             cursor: pointer;
             border-radius: 10px;
             overflow: hidden;
             border: 2px solid var(--border-color);
-            transition: border-color 0.3s, transform 0.3s;
-            flex-shrink: 0;
+            transition: border-color 0.3s, transform 0.3s, opacity 0.3s;
+            background-color: var(--card-bg);
         }
 
-        .carousel-slide:hover {
+        .gallery-item:hover {
             border-color: var(--accent-color);
             transform: scale(1.03);
         }
 
-        .carousel-slide img {
+        .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
 
-        .carousel-nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .carousel-btn {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .carousel-btn:hover {
-            background-color: var(--accent-color);
-            color: #000;
-            border-color: var(--accent-color);
+        .gallery-item.hidden {
+            display: none;
         }
 
         /* Modal Lightbox */
@@ -388,13 +412,13 @@
             justify-content: flex-start;
             gap: 10px;
             padding: 10px 16px;
-            width: 175px; /* Фиксированная ширина для одинакового размера всех кнопок */
-            box-sizing: border-box; /* Чтобы отступы и рамка не ломали общую ширину */
+            width: 150px;
+            box-sizing: border-box;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
             background-color: transparent;
-            border: 1px solid #d1d5db; /* Единый базовый контур (аккуратная серая рамка) */
+            border: 1px solid #d1d5db;
             transition: all 0.1s ease;
         }
 		
@@ -485,6 +509,7 @@
             .map-container { min-height: 300px; }
             .price-box { padding: 25px; }
         }
+
 		/* --- Top Bar Styles --- */
 		.top-bar {
 			position: fixed;
@@ -503,15 +528,15 @@
 			align-items: center;
 			font-weight: 600;
 		}
-		/* --- Стилі для логотипу у верхній панелі --- */
+
 		.top-logo {
 			display: inline-flex;
 			align-items: center;
 		}
 		
 		.top-logo img {
-			height: 35px; /* Задайте бажану висоту логотипу */
-			width: auto;  /* Ширина підлаштується автоматично під пропорції */
+			height: 35px;
+			width: auto;
 			display: block;
 		}
     </style>
@@ -526,6 +551,7 @@
 			<a href="tel:+380676123993">+38 (067) 612-3993</a>
 		</div>
 	</div>
+
     <!-- Перший екран / Шапка -->
     <header class="header">
         <div class="container">
@@ -608,23 +634,43 @@
         </div>
     </section>
 
-    <!-- Галерея робіт -->
+    <!-- Приклади робіт (Категорії / Галерея) -->
     <section>
         <div class="container">
             <h2 class="section-title">Приклади робіт</h2>
-            <div class="carousel-container">
-                <div class="carousel-track" id="carouselTrack">
-					<div class="carousel-slide"><img src="img/smpl00.webp" alt="гравіювання на металі"></div>
-					<div class="carousel-slide"><img src="img/smpl01.webp" alt="гравіювання на металі"></div>
-					<div class="carousel-slide"><img src="img/smpl02.webp" alt="гравіювання на металі"></div>
-					<div class="carousel-slide"><img src="img/smpl03.webp" alt="гравіювання на металі"></div>
-					<div class="carousel-slide"><img src="img/smpl04.webp" alt="гравіювання на металі"></div>
-					<div class="carousel-slide"><img src="img/smpl05.webp" alt="гравіювання на металі"></div>
-                </div>
+            
+            <!-- Таби категорій -->
+            <div class="category-filters" id="categoryFilters">
+                <button class="filter-btn active" data-filter="all">Усі</button>
+                <button class="filter-btn" data-filter="lighters">Запальнички</button>
+                <button class="filter-btn" data-filter="jewelry">Ювелірні вироби</button>
+                <button class="filter-btn" data-filter="watches">Годинники</button>
+                <button class="filter-btn" data-filter="knives">Ножі</button>
+                <button class="filter-btn" data-filter="weapons">Сувенірна зброя</button>
+                <button class="filter-btn" data-filter="pens">Ручки</button>
+                <button class="filter-btn" data-filter="other">Інше</button>
             </div>
-            <div class="carousel-nav">
-                <button class="carousel-btn" id="prevBtn" aria-label="Попереднє фото">&#10094;</button>
-                <button class="carousel-btn" id="nextBtn" aria-label="Наступне фото">&#10095;</button>
+
+            <!-- Сітка робіт з категоріями (можете міняти або додавати data-category) -->
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-category="lighters"><img src="img/smpl011.webp" alt="Запальничка з гравіюванням"></div>
+                <div class="gallery-item" data-category="lighters"><img src="img/smpl012.webp" alt="Запальничка з гравіюванням"></div>
+				
+                <div class="gallery-item" data-category="jewelry"><img src="img/smpl001.webp" alt="Ювелірні вироби"></div>
+                <div class="gallery-item" data-category="jewelry"><img src="img/smpl002.webp" alt="Ювелірні вироби"></div>
+				
+                <div class="gallery-item" data-category="watches"><img src="img/smpl02.webp" alt="Годинники"></div>
+				
+                <div class="gallery-item" data-category="knives"><img src="img/smpl04.webp" alt="Ніж з гравіюванням"></div>
+				
+                <div class="gallery-item" data-category="weapons"><img src="img/smpl03.webp" alt="Сувенірна зброя"></div>
+				
+                <div class="gallery-item" data-category="pens"><img src="img/smpl05.webp" alt="Ручка з гравіюванням"></div>
+				
+				<div class="gallery-item" data-category="other"><img src="img/smpl05.webp" alt="Інші вироби з гравіюванням"></div>
+				<div class="gallery-item" data-category="other"><img src="img/smpl05.webp" alt="Інші вироби з гравіюванням"></div>
+				<div class="gallery-item" data-category="other"><img src="img/smpl05.webp" alt="Інші вироби з гравіюванням"></div>
+				<div class="gallery-item" data-category="other"><img src="img/smpl05.webp" alt="Інші вироби з гравіюванням"></div>
             </div>
         </div>
     </section>
@@ -681,7 +727,6 @@
 							<img src="img/logo/instagram-svgrepo-com.svg" alt="Instagram" class="social-icon">
 							<span>Instagram</span>
 						</a>
-						
                     </div>
                 </div>
 
@@ -706,58 +751,43 @@
     <!-- JS Скрипти -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const track = document.getElementById('carouselTrack');
+            // Логіка фільтрації категорій галереї
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
 
-            // Логіка Каруселі
-            let currentIndex = 0;
-            const slideWidth = 270; // 250px width + 20px gap
-            let autoScrollInterval;
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Зміна активної кнопки
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
 
-            function moveCarousel(index) {
-                const maxIndex = track.children.length - Math.floor(track.parentElement.clientWidth / slideWidth);
-                if (index > maxIndex) currentIndex = 0;
-                else if (index < 0) currentIndex = maxIndex > 0 ? maxIndex : 0;
-                else currentIndex = index;
+                    const category = button.getAttribute('data-filter');
 
-                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-            }
-
-            function startAutoScroll() {
-                autoScrollInterval = setInterval(() => {
-                    moveCarousel(currentIndex + 1);
-                }, 3000);
-            }
-
-            function stopAutoScroll() {
-                clearInterval(autoScrollInterval);
-            }
-
-            document.getElementById('nextBtn').addEventListener('click', () => {
-                stopAutoScroll();
-                moveCarousel(currentIndex + 1);
-                startAutoScroll();
+                    // Фільтрація елементів
+                    galleryItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
             });
-
-            document.getElementById('prevBtn').addEventListener('click', () => {
-                stopAutoScroll();
-                moveCarousel(currentIndex - 1);
-                startAutoScroll();
-            });
-
-            track.addEventListener('mouseenter', stopAutoScroll);
-            track.addEventListener('mouseleave', startAutoScroll);
-
-            startAutoScroll();
 
             // Логіка Lightbox (збільшення фото)
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
             const closeModal = document.getElementById('modalClose');
+            const galleryGrid = document.getElementById('galleryGrid');
 
-            track.addEventListener('click', (e) => {
-                if (e.target.tagName === 'IMG') {
-                    modal.style.display = 'flex';
-                    modalImg.src = e.target.src;
+            galleryGrid.addEventListener('click', (e) => {
+                const targetItem = e.target.closest('.gallery-item');
+                if (targetItem) {
+                    const img = targetItem.querySelector('img');
+                    if (img) {
+                        modal.style.display = 'flex';
+                        modalImg.src = img.src;
+                    }
                 }
             });
 
