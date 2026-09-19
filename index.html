@@ -11,7 +11,7 @@
     
     <!-- Open Graph (для соцмереж та месенджерів) -->
     <meta property="og:title" content="Лазерне гравіювання у Запоріжжі — Майстерня «Акцент»">
-    <meta property="og:description" content="Швидке та якісне нанесення написів і малюнків на будь-які поверхні в центрі Запоріжжя.">
+    <meta property="og:description" content="Швидке та якісне нанесення написів і малюнків поверхні в центрі Запоріжжя.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://akcent.zp.ua/">
 
@@ -526,7 +526,9 @@
 			top: 0;
 			left: 0;
 			width: 100%;
-			background-color: #08090c;
+			/* background-color: #08090c; */
+			background-color: rgba(8, 9, 12, 0.88);  
+			backdrop-filter: blur(8px);  
 			border-bottom: 1px solid var(--border-color);
 			padding: 10px 0;
 			z-index: 1001;
@@ -545,14 +547,14 @@
 		}
 		
 		.top-logo img {
-			height: 35px;
+			height: 70px;
 			width: auto;
 			display: block;
 		}
     </style>
 </head>
 <body>
-	<!-- Верхній футер -->
+	<!-- Верхня панель (шапка) -->
 	<div class="top-bar">
 		<div class="container top-bar-flex">
 			<a href="#" class="top-logo">
@@ -567,7 +569,7 @@
         <div class="container">
             <div class="brand-badge">Лазерне гравіювання «Акцент» • м. Запоріжжя</div>
             <h1 class="hero-title">Лазерне гравіювання у центрі Запоріжжя</h1>
-            <p class="hero-subtitle">Якісне та точне нанесення написів, малюнків і символів на будь-які поверхні.</p>
+            <p class="hero-subtitle">Якісне та точне нанесення написів, малюнків і символів.</p>
 			
             <div class="cta-buttons">
 				<!-- Telegram -->
@@ -604,18 +606,18 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🔪</div>
-                    <h3>гравіювання на металі</h3>
-                    <p>Нанесення написів та малюнків на ножі, сувенірні жетони, запальнички, годинники, посуд та термоси.</p>
+                    <h3>Гравіювання на металі.</h3>
+                    <p>Нанесення написів та малюнків на ножі, сувенірні жетони, запальнички, годинники, посуд, термоси та ювелірні вироби.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">💼</div>
-                    <h3>гравіювання на шкірі та дереві</h3>
-                    <p>Персоналізація гаманців, ременів, чохлів, дерев'яних сувенірів та Yud-виробів.</p>
+                    <h3>Гравіювання на шкірі та дереві.</h3>
+                    <p>Персоналізація гаманців, ременів, чохлів, дерев'яних сувенірів.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🎁</div>
-                    <h3>Персоналізація подарунків</h3>
-                    <p>Індивідуальні вітальні написи на готових виробах і пам'ятних сувенірах будь-якої складності.</p>
+                    <h3>Персоналізація подарунків.</h3>
+                    <p>Індивідуальні вітальні написи на готових виробах та пам'ятних сувенірах, виготовлення табличок із гравіюванням до них.</p>
                 </div>
             </div>
         </div>
@@ -632,7 +634,7 @@
                 </div>
                 
                 <div class="info-block">
-                    Точна вартість залежить від розміру нанесеного зображення та матеріалу виробу. Для уточнення ціни зателефонуйте нам або завітайте до майстерні.
+                    Точна вартість залежить від розміру нанесеного зображення, матеріалу виробу та часу обробки на обладнанні. Для уточнення ціни зателефонуйте нам або завітайте до майстерні.
                 </div>
 
                 <div class="info-block">
@@ -658,6 +660,7 @@
                 <button class="filter-btn" data-filter="knives">Ножі</button>
                 <button class="filter-btn" data-filter="weapons">Сувенірна зброя</button>
                 <button class="filter-btn" data-filter="pens">Ручки</button>
+                <button class="filter-btn" data-filter="plates">Таблички на сувеніри</button>
                 <button class="filter-btn" data-filter="other">Інше</button>
             </div>
 
@@ -677,9 +680,11 @@
                 <div class="gallery-item" data-category="knives"><img src="img/smpl04.webp" alt="Ніж з гравіюванням"></div>
                 <div class="gallery-item" data-category="knives"><img src="img/smpl04.webp" alt="Ніж з гравіюванням"></div>
 				
-                <div class="gallery-item" data-category="weapons"><img src="img/smpl03.webp" alt="Сувенірна зброя"></div>
+                <div class="gallery-item" data-category="weapons"><img src="img/smpl04.webp" alt="Сувенірна зброя"></div>
 				
                 <div class="gallery-item" data-category="pens"><img src="img/smpl05.webp" alt="Ручка з гравіюванням"></div>
+				
+                <div class="gallery-item" data-category="plates"><img src="img/smpl03.webp" alt="Пам'ятна табличка на сувенірі"></div>
 				
 				<div class="gallery-item" data-category="other"><img src="img/smpl05.webp" alt="Інші вироби з гравіюванням"></div>
 				<div class="gallery-item" data-category="other"><img src="img/smpl05.webp" alt="Інші вироби з гравіюванням"></div>
